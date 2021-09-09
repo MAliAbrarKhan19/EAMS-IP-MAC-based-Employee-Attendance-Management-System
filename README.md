@@ -25,7 +25,16 @@ Advantages:
 Disadvantages:
     • It is totally network based so it’s need to internet for access.
     • Every employee needs to switch on your own computer for attendance.
-    
+
+Login page:
+![img0](https://user-images.githubusercontent.com/31814733/132699004-91463f74-462f-48bc-9cee-0c5ba610ad5f.png)
+
+
+
+
+
+![img2](https://user-images.githubusercontent.com/31814733/132699057-98c57637-31f6-410b-9878-d1b55f151b78.png)
+
     
 by: 
 
