@@ -24,3 +24,17 @@ Advantages:
 Disadvantages:
     • It is totally network based so it’s need to internet for access.
     • Every employee needs to switch on your own computer for attendance.
+    
+    
+by: 
+		M. Ali Abrar Khan
+		ID-11170320121
+		Section- 8A
+		Department of Computer Science & Engineering,
+		Northern University of Business and Technology Khulna.
+		
+		Md. Tahadur Rahman
+		ID-11170320115
+		Section- 8A
+		Department of Computer Science & Engineering,
+		Northern University of Business and Technology Khulna.
