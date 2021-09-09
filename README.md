@@ -1,4 +1,5 @@
-# EAMS-Employee-Attendance-Management-System
+# Project Title:  Industrial network design in packet Tracer and employee attendance system using static IP and MAC  
+EAMS-Employee-Attendance-Management-System
 
 Project Overview: 
 
