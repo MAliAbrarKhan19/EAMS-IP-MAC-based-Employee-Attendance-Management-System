@@ -8,12 +8,19 @@ session_start();//session starts here
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <!-- Bootstrap CSS --> 
-    <link type="text/css" rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap.css">
-    <link rel="icon" type="text/css" href="person-bounding-box.svg" class="bg-warning"> 
-        <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-icons.css">
     <!-- Bootstrap CSS -->
 
+
+
+    <link rel="icon" type="text/css" href="person-bounding-box.svg" class="bg-warning"> 
+    
 
 
     <title>EAMS</title>  
@@ -24,7 +31,7 @@ session_start();//session starts here
   
 </style>  
   
-<body class="container-fluid">  
+<body class="container-fluid bg-dark">  
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -41,7 +48,7 @@ session_start();//session starts here
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"></a>
@@ -69,21 +76,21 @@ session_start();//session starts here
       </div>
     </div>
 
-<div class="row mt-3 p-1" 
+<div class="row mt-1 p-5" 
 style="background-image: url(./img/eamsbg.svg);
 background-size: auto;
 background-attachment: inherit;
 background-repeat: no-repeat;
-background-position: center;
+background-position: right;
 
 
 ">
-    <div class="col text-light p-5" style="background-color: rgba(0, 0, 0, 0.5);">
-        <h4>Welcome to</h4>
-          <h1 class="display-2 m-1 text-primary"><i class="bi bi-person-bounding-box"></i> EAMS </h1>
-          <h3><span class="text-info m-1 ">- Employee Attendance Management System</span></h3>
+    <div class="col-md-6 text-light p-3" style="background-color: rgba(0, 0, 10, 0.3);">
+        <h4 class="h3">Welcome to</h4>
+          <h1 class="display-2 m-4 text-primary"><i class="bi bi-person-bounding-box"></i> EAMS </h1>
+          <h3 class="text-info m-1 p-2 ">Employee Attendance Management System</h3>
 
-        <h5>EAMS is a IP and MAC based Attendance System for official use.</h5>
+        <h5 class="m-3">EAMS is a IP and MAC based Attendance System for official use.</h5>
 
     </div>
 </div>  
