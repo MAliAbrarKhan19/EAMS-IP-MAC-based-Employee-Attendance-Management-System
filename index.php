@@ -39,12 +39,9 @@ if(isset($_POST['login']))
     // Print the ip address of clien
 ?>
 
-
-<hr>
-
-
 <?php   
     
+    //Get mac and IP
 function GetClientMac(){
     $macAddr=false;
     $arp=`arp -n`;

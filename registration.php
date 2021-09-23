@@ -1,28 +1,67 @@
-<html>  
-<head lang="en">  
-    <meta charset="UTF-8">  
-    <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist\css\bootstrap.css">  
-    <title>Registration</title>  
-</head>  
+ 
 <style>  
     .login-panel {  
         margin-top: 150px;  
   
 </style>  
-<body>  
-  
+<body>   
+<?php include'header.php'; ?>
+<?php
+
+    // PHP program to get IP address of client
+    $IP = $_SERVER['REMOTE_ADDR'];
+    $IPServer = $_SERVER['SERVER_ADDR'];
+
+    // $IP stores the ip address of client
+    // echo "Client's IP address is: $IP<br><hr>";
+    // echo "Client's ServerIP address is: $IPServer";
+    // Print the ip address of clien
+?>
+
+<?php   
+    
+function GetClientMac(){
+    $macAddr=false;
+    $arp=`arp -n`;
+    $lines=explode("\n", $arp);
+
+    foreach($lines as $line){
+        $cols=preg_split('/\s+/', trim($line));
+
+        if ($cols[0]==$_SERVER['REMOTE_ADDR']){
+            $macAddr=$cols[2];
+        }
+    }
+
+    return $macAddr;
+}
+$MAC=GetClientMac();
+// echo "Your MAC address: $MAC ";
+?>
+
+<?php //echo $IP; ?>
+<?php //echo $MAC; ?>
+
 <div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->  
     <div class="row"><!-- row class is used for grid system in Bootstrap-->  
-        <div class="col-md-4 col-md-offset-4"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->  
-            <div class="login-panel panel panel-success">  
-                <div class="panel-heading">  
-                    <h3 class="panel-title">Registration</h3>  
+        <div class="col-md-8 offset-md-2"> 
+            <div class="card bg-primary text-light p-2 m-4">  
+                <div class="card-heading">  
+                    <h3 class="card-title">Registration</h3>  
                 </div>  
-                <div class="panel-body">  
+                <div class="card-body p-2">  
                     <form role="form" method="post" action="registration.php">  
-                        <fieldset>  
+                        <fieldset>
+                            <div class="form-group"  >
+                                IP: <?php echo $IP; ?>
+                                <input class="form-control" placeholder="<?php echo $IP; ?>" value="<?php echo $IP; ?>" name="emp_ip" type="hidden" autofocus>  
+                            </div> 
+                            <div class="form-group"  >
+                                MAC  <?php echo $MAC; ?>
+                                <input class="form-control" placeholder="<?php echo $MAC; ?>" value="<?php echo $MAC; ?>" name="emp_mac" type="hidden" autofocus>  
+                            </div>   
                             <div class="form-group">  
-                                <input class="form-control" placeholder="Username" name="name" type="text" autofocus>  
+                                <input class="form-control" placeholder="Employee name" name="name" type="text" autofocus>  
                             </div>  
   
                             <div class="form-group">  
@@ -43,10 +82,7 @@
         </div>  
     </div>  
 </div>  
-  
-</body>  
-  
-</html>  
+
   
 <?php  
   
@@ -93,3 +129,4 @@ exit();
     }  
 } 
 ?>  
+<?php include 'footer.php'; ?>
