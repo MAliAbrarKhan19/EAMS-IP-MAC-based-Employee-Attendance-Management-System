@@ -1,11 +1,6 @@
- 
-<style>  
-    .login-panel {  
-        margin-top: 150px;  
-  
-</style>  
-<body>   
 <?php include'header.php'; ?>
+ 
+
 <?php
 
     // PHP program to get IP address of client
@@ -52,22 +47,22 @@ $MAC=GetClientMac();
                 <div class="card-body p-2">  
                     <form role="form" method="post" action="registration.php">  
                         <fieldset>
-                            <div class="form-group"  >
+                            <div class="form-group m-1"  >
                                 IP: <?php echo $IP; ?>
                                 <input class="form-control" placeholder="<?php echo $IP; ?>" value="<?php echo $IP; ?>" name="emp_ip" type="hidden" autofocus>  
                             </div> 
-                            <div class="form-group"  >
+                            <div class="form-group m-1"  >
                                 MAC  <?php echo $MAC; ?>
                                 <input class="form-control" placeholder="<?php echo $MAC; ?>" value="<?php echo $MAC; ?>" name="emp_mac" type="hidden" autofocus>  
                             </div>   
-                            <div class="form-group">  
+                            <div class="form-group m-1">  
                                 <input class="form-control" placeholder="Employee name" name="name" type="text" autofocus>  
                             </div>  
   
-                            <div class="form-group">  
+                            <div class="form-group m-1">  
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>  
                             </div>  
-                            <div class="form-group">  
+                            <div class="form-group m-1">  
                                 <input class="form-control" placeholder="Password" name="pass" type="password" value="">  
                             </div>  
   

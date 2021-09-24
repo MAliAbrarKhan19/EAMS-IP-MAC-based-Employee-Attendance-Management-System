@@ -2,7 +2,7 @@
 
   
 <?php  
-  
+// login Code PHP Starts  
 include("database/db_conection.php");  
   
 if(isset($_POST['login']))  
@@ -25,7 +25,9 @@ if(isset($_POST['login']))
     {  
       echo "<script>alert('Email or password is incorrect!')</script>";  
     }  
-}  
+} 
+// login Code PHP Ends  
+
 ?> 
 <?php
 
@@ -63,7 +65,7 @@ $MAC=GetClientMac();
 
 <?php //echo $IP; ?>
 <?php //echo $MAC; ?>
-    <div class="row">  
+    <div class="row mt-3" >  
         <div class="col-md-8 offset-md-2">  
             <div class="card bg-primary text-light p-2">  
                 <div class="panel-heading">  
@@ -73,9 +75,11 @@ $MAC=GetClientMac();
                     <form role="form" method="post" action="login.php">  
                         <fieldset>  
                             <div class="form-group"  >
+
                                 IP: <?php echo $IP; ?>
                                 <input class="form-control" placeholder="<?php echo $IP; ?>" value="<?php echo $IP; ?>" name="emp_ip" type="hidden" autofocus>  
-                            </div> 
+                            </div>
+                             
                             <div class="form-group"  >
                                 MAC  <?php echo $MAC; ?>
                                 <input class="form-control" placeholder="<?php echo $MAC; ?>" value="<?php echo $MAC; ?>" name="emp_mac" type="hidden" autofocus>  
@@ -102,7 +106,5 @@ $MAC=GetClientMac();
         </div>  
     </div> 
 
-
- 
 
 <?php include 'footer.php'; ?>

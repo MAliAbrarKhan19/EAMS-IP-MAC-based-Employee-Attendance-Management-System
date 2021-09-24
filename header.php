@@ -26,8 +26,7 @@ session_start();//session starts here
     <title>EAMS</title>  
 </head>  
 <style>  
-    .login-panel {  
-        margin-top: 150px;  
+    
   
 </style>  
   
