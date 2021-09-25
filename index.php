@@ -28,7 +28,7 @@ if(isset($_POST['login']))
   
     if(mysqli_num_rows($run))  
     {  
-        $_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
+        $_SESSION['email']=$user_email;  
         echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>";  
   
     }  
@@ -50,7 +50,6 @@ if(isset($_POST['login']))
     // PHP program to get IP address of client
     $IP = $_SERVER['REMOTE_ADDR'];
     $IPServer = $_SERVER['SERVER_ADDR'];
-
     // $IP stores the ip address of client
     // echo "Your IP address is: $IP<br><hr>";
     // echo "ServerIP address is: $IPServer";
