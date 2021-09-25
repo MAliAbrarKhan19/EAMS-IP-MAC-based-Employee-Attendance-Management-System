@@ -1,24 +1,35 @@
 <?php include'header.php'; ?>
 
   
-<?php  
+<?php
+include("db_conection.php");  
+
+// logout code 
+if(isset($_POST['logout']))  
+{ 
+
+    //session_start(); 
+
+    session_destroy();  
+    echo "<script> alert('LOGOUT success!!you are out');</script>"; 
+    //header("Location:index.php");//use for the redirection to some page  
+
+}  
 // login Code PHP Starts  
-include("database/db_conection.php");  
   
 if(isset($_POST['login']))  
 {  
     $user_email=$_POST['email'];  
     $user_pass=$_POST['pass'];  
   
-    $check_user="select * from users WHERE user_email='$user_email'AND user_pass='$user_pass'";  
+    $check_user="select*from employee WHERE emp_email='$user_email' AND emp_pass='$user_pass'";  
   
     $run=mysqli_query($dbcon,$check_user);  
   
     if(mysqli_num_rows($run))  
     {  
-        echo "<script>window.open('welcome.php','_self')</script>";  
-  
         $_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
+        echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>";  
   
     }  
     else  
@@ -28,7 +39,12 @@ if(isset($_POST['login']))
 } 
 // login Code PHP Ends  
 
+
+
 ?> 
+<script type="text/javascript">
+    // alert
+</script>
 <?php
 
     // PHP program to get IP address of client
@@ -69,7 +85,7 @@ $MAC=GetClientMac();
                     <h3 class="card-title">Employee Log In / Log Out</h3>  
                 </div>  
                 <div class="card-body">  
-                    <form role="form" method="post" action="login.php">  
+                    <form role="form" method="post">  
                         <fieldset>  
                             <div class="form-group m-3"  >
 

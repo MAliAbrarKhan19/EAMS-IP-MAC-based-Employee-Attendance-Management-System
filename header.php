@@ -105,5 +105,5 @@ $day=date("j");
 $month=date("n");
 $year=date("o");
 $timehr=date("H");
-echo "<h1 class='text-light'>"."time".$time." day".$day." month ".$month." year".$year."</h1>"
+//echo "<h1 class='text-light'>"."time".$time." day".$day." month ".$month." year".$year."</h1>"
 ?>
