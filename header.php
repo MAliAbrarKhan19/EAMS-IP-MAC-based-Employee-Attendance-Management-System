@@ -2,7 +2,9 @@
 session_start();//session starts here  
   
 ?>  
-  
+ 
+
+
 <html>  
 <head lang="en">  
     <meta charset="UTF-8"> 
@@ -30,7 +32,7 @@ session_start();//session starts here
   
 </style>  
   
-<body class="container-fluid bg-dark">  
+<body class="container-fluid">  
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -93,3 +95,15 @@ background-position: right;
 
     </div>
 </div>  
+
+<?php 
+date_default_timezone_set("ASIA/DHAKA");
+$time=date("H");//hr
+$timemin=date("i");//min
+//$date = date(" h:i a  d-m-Y");
+$day=date("j");
+$month=date("n");
+$year=date("o");
+$timehr=date("H");
+echo "<h1 class='text-light'>"."time".$time." day".$day." month ".$month." year".$year."</h1>"
+?>
