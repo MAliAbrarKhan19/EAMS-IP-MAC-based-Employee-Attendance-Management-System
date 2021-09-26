@@ -41,7 +41,9 @@ session_start();//session starts here
                   <i class="bi bi-person-bounding-box text-info">EAMS</i>
               </h2>
           </a>
-          
+          <span class="navbar-text mr-5" style=" ">
+               | IP & MAC based attendance system |  
+          </span>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,17 +53,7 @@ session_start();//session starts here
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Home </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Login </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="registration.php">Add Employee</a>
-              </li>
+              
               
                 <?php 
 
@@ -89,10 +81,8 @@ session_start();//session starts here
             
           </div>
           
-          <span class="navbar-text p-1" style=" ">
-               | IP & MAC based attendance system |  
-          </span>
-          <span class="navbar-text text-info mr-3 p-1">
+          
+          <span class="navbar-text text-info m-1">
             <i><?php echo $adm; ?></i>
           </span>
           
