@@ -125,6 +125,7 @@ date_default_timezone_set("ASIA/DHAKA");
 $time=date("H");//hr
 $timemin=date("i");//min
 //$date = date(" h:i a  d-m-Y");
+$date = date("d-m-Y");
 $day=date("j");
 $month=date("n");
 $year=date("o");

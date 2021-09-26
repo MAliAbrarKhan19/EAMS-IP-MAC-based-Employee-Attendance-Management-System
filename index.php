@@ -21,16 +21,36 @@ if(isset($_POST['login']))
 {  
     $emp_email=$_POST['emp_email'];  
     $emp_pass=$_POST['emp_pass'];  
-  
+    $emp_ip=$_POST['emp_ip'];  
+    $emp_mac=$_POST['emp_mac'];  
+    $logintime=$time;  
+    $loginmin=$timemin;
+    $emp_status="";  
+    $remark="";
+    $day=$day;
+    $month=$month;
+    $emp_date=$date;
+    $emp_mac=$_POST['emp_mac'];
+
+  //`attendance`(`sl`, `emp_name`, `emp_ip`, `emp_mac`, `emp_status`, `logintime`, `loginmin`, `logouttime`, `logoutmin`, `remark`, `day`, `month`, `emp_date`)
     $check_user="select*from employee WHERE emp_email='$emp_email' AND emp_pass='$emp_pass'";  
   
     $run=mysqli_query($dbcon,$check_user);  
   
     if(mysqli_num_rows($run))  
     {  
-        $_SESSION['emp_email']=$emp_email; 
-        include 'loginfunction.php'; 
-        echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>";  
+        //$_SESSION['emp_email']=$emp_email; 
+        //include 'loginfunction.php'; 
+        // echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>"; 
+        include("db_conection.php");  
+
+        $insertdb="insert into attendance(emp_name,emp_ip,emp_mac,emp_status,logintime,loginmin,logouttime,logoutmin,remark,day,month,emp_date)values('$emp_name','$emp_ip','$emp_mac','$emp_status','$logintime','$loginmin','$logouttime','$logoutmin','$remark','$day','$month','$emp_date')";  
+        if(mysqli_query($dbcon,$insertdb))  
+        {  
+            echo "<script> alert('IP & Mac registered!!');</script>";
+            // echo"<script>window.open('index.php');</script>";  
+        }
+        else{ echo "<script> alert('Not registered!!');</script>";}  
   
     }  
     else  
