@@ -36,12 +36,46 @@ if(isset($_POST['login']))
     $check_user="select*from employee WHERE emp_email='$emp_email' AND emp_pass='$emp_pass'";  
   
     $run=mysqli_query($dbcon,$check_user);  
-  
+    
     if(mysqli_num_rows($run))  
-    {  
+    {   
+        $row=mysqli_fetch_assoc($run);
+        $emp_name=$row['emp_name'];//save employee name
+        $dbemp_mac=$row['emp_mac'];//save employee name
+        $dbemp_ip=$row['emp_ip'];//save employee name
+        $_SESSION['email']=" Name ".$emp_name." MAC ".$dbemp_mac." IP".$dbemp_ip ; 
+
         //$_SESSION['emp_email']=$emp_email; 
         //include 'loginfunction.php'; 
         // echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>"; 
+        
+        // Check Mack &  IP
+        if ($dbemp_mac==$emp_mac) {
+            $emp_status="Logged in";
+            echo "<script> alert('success!!".$_SESSION['email'].$emp_status.$remark."you are in');</script>"; 
+            //Check IP
+            if ($dbemp_ip==$emp_ip) {
+                $remark=" MAC OK & IP OK ";  
+            }
+            else{    $remark=" MAC OK But IP NOT OK ";  
+            }
+            //Check IP
+
+            
+        }else{
+            echo "<script> alert('MAC did not match! Unsuccessfull LOgin !!".$_SESSION['email'].$emp_status.$remark."You are NOT IN');window.open('index.php');</script>"; 
+
+
+        }
+        // Check Mack &  IP
+
+        // echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>"; 
+        //echo "<script> alert('Test :::".$_SESSION['email'].$remark.$emp_status." ================');</script>"; 
+
+        
+        
+
+        //Attendance Entry+++++++++++++++++++++++++++++
         include("db_conection.php");  
 
         $insertdb="insert into attendance(emp_name,emp_ip,emp_mac,emp_status,logintime,loginmin,logouttime,logoutmin,remark,day,month,emp_date)values('$emp_name','$emp_ip','$emp_mac','$emp_status','$logintime','$loginmin','$logouttime','$logoutmin','$remark','$day','$month','$emp_date')";  
@@ -51,7 +85,8 @@ if(isset($_POST['login']))
             // echo"<script>window.open('index.php');</script>";  
         }
         else{ echo "<script> alert('Not registered!!');</script>";}  
-  
+        //Attendance Entry+++++++++++++++++++++++++++++
+        
     }  
     else  
     {  
