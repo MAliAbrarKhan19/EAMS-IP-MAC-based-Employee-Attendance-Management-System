@@ -51,8 +51,8 @@ session_start();//session starts here
           
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active ml-1 mr-1">
-                <a class="nav-link text-info btn btn-outline-info" href="index.php"><i class="bi bi-house-door"></i>Home </a>
+              <li class="nav-item active">
+                <a class="nav-link text-info btn btn-outline-info" href="index.php"><i class="bi bi-house-door"></i>Home</a>
               </li>
               
               
@@ -67,7 +67,7 @@ session_start();//session starts here
                     $adm="Admin Name: ".$_SESSION['admin_name']
                     ?>
                 <li class="nav-item">
-                    <a href="adminpanel.php" class="btn btn-outline-info">Admin panel</a>
+                    <a href="adminpanel.php#menu" class="btn btn-outline-info">Admin panel</a>
                 </li>
                 <li class="nav-item">
                     <form method="POST">

@@ -74,7 +74,7 @@ $MAC=GetClientMac();
     <div class="row">
         <div class="col-md-8 offset-md-2"> 
             <div class="card bg-primary text-light p-2 m-4">  
-                <div class="card-heading">  
+                <div class="card-heading" id="list">  
                     <h3 class="card-title">Registration</h3>  
                 </div>  
                 <div class="card-body p-2">  

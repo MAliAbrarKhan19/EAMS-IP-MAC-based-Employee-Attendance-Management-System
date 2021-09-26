@@ -27,12 +27,12 @@
               <?php 
               include("db_conection.php");  
 
-                    //$d=$date;
-                    $query= "SELECT*FROM attendance";
-                        $result= mysqli_query($dbcon, $query);
+                    $d=$date;
+                    $query= "SELECT*FROM attendance WHERE emp_date='$d'";
+                        $result= mysqli_query($dbcon,$query);
                         $num_rows=mysqli_num_rows($result);
                           // $row = mysqli_fetch_assoc($result);
-                            $row=mysqli_fetch_assoc($result);
+                         $row=mysqli_fetch_assoc($result);
 
                     if ($num_rows > 0){
                     while ($row = mysqli_fetch_assoc($result)){
@@ -40,7 +40,7 @@
 
              ?>
              <tr>
-                 <td><?php echo $row['date']; ?></td>
+                 <td><?php echo $row['emp_date']; ?></td>
                  <td><?php echo $row['sl']; ?></td>
                  <td><?php echo $row['emp_name']; ?></td>
                  <td><?php echo $row['emp_ip']; ?></td>

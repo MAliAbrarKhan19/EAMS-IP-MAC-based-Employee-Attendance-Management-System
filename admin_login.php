@@ -42,14 +42,14 @@ if(isset($_POST['admin_login']))
   
     if(mysqli_num_rows($run_query)>0)  
     {           
-                    include("db_conection.php");  
+        include("db_conection.php");  
 
-                    $d=$email;
-                    $query= "select * from admin where email='$d'";
-                        $result= mysqli_query($dbcon, $query);
-                        // $num_rows=mysqli_num_rows($result);
-                  // $row = mysqli_fetch_assoc($result);
-                            $row=mysqli_fetch_assoc($result);
+        $d=$email;
+        $query= "select * from admin where email='$d'";
+            $result= mysqli_query($dbcon, $query);
+            // $num_rows=mysqli_num_rows($result);
+        // $row = mysqli_fetch_assoc($result);
+                $row=mysqli_fetch_assoc($result);
 
         $_SESSION['admin_name']=$row['name'];
         echo "<script>alert('Hello, Mr. ".$_SESSION['name']." You are successfully logged in.');</script>";  
