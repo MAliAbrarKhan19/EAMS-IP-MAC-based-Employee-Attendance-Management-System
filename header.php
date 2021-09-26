@@ -55,36 +55,57 @@ session_start();//session starts here
                 <a class="nav-link" href="#"></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="admin_login.php">Admin  </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Login </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="registration.php">New Employee</a>
+                <a class="nav-link" href="registration.php">Add Employee</a>
               </li>
               <li class="nav-item">
                 <?php 
-                  //if ($_SESSION['admin_name']) {
+
+                  if(empty($_SESSION['admin_name'])){
                   
                     ?>
-                    <input type="submit" name="admin_logout" value="Admin logout"  class="btn btn-outline-info ">
+                    <a class="btn btn-outline-info" href="admin_login.php">Admin login</a>
                   <?php   
-                  // } ?>
+                   }else if (!empty($_SESSION['admin_name'])){
+                    $adm="Admin Name: ".$_SESSION['admin_name']
+                    ?>
+                    <form method="POST">
+                    <input type="submit" name="admin_logout" value="Admin logout" class="btn btn-outline-info ">
+                    </form>
+                    <?php
+                   } ?>
               </li>
             </ul>
             
             
           </div>
+          
           <span class="navbar-text p-1" style=" ">
                | IP & MAC based attendance system |  
           </span>
-
+          <span class="navbar-text text-info mr-3 p-1">
+            <i><?php echo $adm; ?></i>
+          </span>
           
         </nav>
       </div>
     </div>
+<?php 
+/// Log out Code Starts
 
+/// Log out Code Ends 
+if(isset($_POST['admin_logout'])){
+  //session_start();
+  session_destroy();
+  header("Location: index.php");//use for the redirection to some page  
+
+}
+
+ ?>
 <div class="row mt-1 p-5" 
 style="background-image: url(./img/eamsbg.svg);
 background-size: auto;

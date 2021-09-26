@@ -32,7 +32,7 @@
 
 include("db_conection.php");  
   
-if(isset($_POST['admin_login']))//this will tell us what to do if some data has been post through form with button.  
+if(isset($_POST['admin_login']))
 {  
     $email=$_POST['email'];  
     $pass=$_POST['pass'];  
@@ -41,9 +41,18 @@ if(isset($_POST['admin_login']))//this will tell us what to do if some data has 
     $run_query=mysqli_query($dbcon,$admin_query);  
   
     if(mysqli_num_rows($run_query)>0)  
-    {  
-  
-        echo "<script>alert('success ');</script>";  
+    {           
+                    include("db_conection.php");  
+
+                    $d=$email;
+                    $query= "select * from admin where email='$d'";
+                        $result= mysqli_query($dbcon, $query);
+                        // $num_rows=mysqli_num_rows($result);
+                  // $row = mysqli_fetch_assoc($result);
+                            $row=mysqli_fetch_assoc($result);
+
+        $_SESSION['admin_name']=$row['name'];
+        echo "<script>alert('Hello, Mr. ".$_SESSION['name']." You are successfully logged in.');</script>";  
         echo "<script>window.open('view_users.php','_self')</script>";  
     }  
     else {echo"<script>alert('Admin Details are incorrect..!')</script>";}  
