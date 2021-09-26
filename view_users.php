@@ -1,19 +1,4 @@
-<html>  
-<head lang="en">  
-    <meta charset="UTF-8">  
-    <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist\css\bootstrap.css"> <!--css file link in bootstrap folder-->  
-    <title>View Users</title>  
-</head>  
-<style>  
-    .login-panel {  
-        margin-top: 150px;  
-    }  
-    .table {  
-        margin-top: 50px;  
-     }  
-</style>  
-  
-<body>  
+<?php include 'header.php'; ?> 
   
 <div class="table-scrol">  
     <h1 align="center">All the Users</h1>  
@@ -60,6 +45,4 @@
     </table>  
         </div>  
 </div>  
-</body>  
-  
-</html>  
+<?php include 'footer.php'; ?> 
