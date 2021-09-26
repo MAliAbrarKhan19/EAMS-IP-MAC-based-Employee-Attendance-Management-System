@@ -7,8 +7,8 @@ include("db_conection.php");
 // logout code 
 if(isset($_POST['logout']))  
 { 
-
-    //session_start(); 
+    $_SESSION['emp_email']=0;
+    session_start(); 
 
     session_destroy();  
     echo "<script> alert('LOGOUT success!!you are out');</script>"; 
@@ -19,16 +19,16 @@ if(isset($_POST['logout']))
   
 if(isset($_POST['login']))  
 {  
-    $user_email=$_POST['email'];  
-    $user_pass=$_POST['pass'];  
+    $emp_email=$_POST['emp_email'];  
+    $emp_pass=$_POST['emp_pass'];  
   
-    $check_user="select*from employee WHERE emp_email='$user_email' AND emp_pass='$user_pass'";  
+    $check_user="select*from employee WHERE emp_email='$emp_email' AND emp_pass='$emp_pass'";  
   
     $run=mysqli_query($dbcon,$check_user);  
   
     if(mysqli_num_rows($run))  
     {  
-        $_SESSION['email']=$user_email;  
+        $_SESSION['emp_email']=$emp_email;  
         echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>";  
   
     }  
@@ -77,6 +77,26 @@ $MAC=GetClientMac();
 
 <?php //echo $IP; ?>
 <?php //echo $MAC; ?>
+
+<!-- // loged in block -->
+<?php 
+    if (!empty($_SESSION['emp_email'])) {
+            
+?>
+<div class="row">
+    <div class="col-md-12">
+        <div class=" text-info">
+            <h1>
+                <?php echo $_SESSION['emp_email']; ?> is logged in successfully.
+            </h1>
+        </div>        
+    </div>
+</div>
+<?php 
+        }    
+ ?>
+<!-- // loged in block -->
+
     <div class="row mt-3" >  
         <div class="col-md-8 offset-md-2">  
             <div class="card bg-primary text-light p-2">  
@@ -98,11 +118,11 @@ $MAC=GetClientMac();
                             </div> 
                             <div class="form-group m-3"  > 
                                 Email 
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>  
+                                <input class="form-control" placeholder="E-mail" name="emp_email" type="email" autofocus>  
                             </div>  
                             <div class="form-group m-3"> 
                                 Password 
-                                <input class="form-control" placeholder="Password" name="pass" type="password" value="">  
+                                <input class="form-control" placeholder="Password" name="emp_pass" type="password" value="">  
                             </div>  
   
                             <div class="m-1 p-2"> 
