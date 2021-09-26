@@ -28,7 +28,8 @@ if(isset($_POST['login']))
   
     if(mysqli_num_rows($run))  
     {  
-        $_SESSION['emp_email']=$emp_email;  
+        $_SESSION['emp_email']=$emp_email; 
+        include 'loginfunction.php'; 
         echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>";  
   
     }  
