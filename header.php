@@ -33,7 +33,7 @@ session_start();//session starts here
   
 </style>  
   
-<body class="container-fluid ">  
+<body class="container-fluid bg-dark">  
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
