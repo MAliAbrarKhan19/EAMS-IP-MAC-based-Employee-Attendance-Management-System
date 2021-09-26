@@ -9,12 +9,75 @@ if(isset($_POST['logout']))
 { 
     $_SESSION['emp_email']=0;
     session_start(); 
-
-    session_destroy();  
+     session_destroy();  
     echo "<script> alert('LOGOUT success!!you are out');</script>"; 
-    //header("Location:index.php");//use for the redirection to some page  
+    // //header("Location:index.php");//use for the redirection to some page  
+    $emp_email=$_POST['emp_email'];  
+    $emp_pass=$_POST['emp_pass'];  
+    $emp_ip=$_POST['emp_ip'];  
+    $emp_mac=$_POST['emp_mac'];  
+    $logouttime=$time;  
+    $logoutmin=$timemin;
+    $emp_status="";  
+    $remark="";
+    $day=$day;
+    $month=$month;
+    $emp_date=$date;
+    $emp_mac=$_POST['emp_mac'];
+
+
+    $check_user="select*from employee WHERE emp_email='$emp_email' AND emp_pass='$emp_pass'";  
+    $run=mysqli_query($dbcon,$check_user);  
+    
+    if(mysqli_num_rows($run))  
+    {   
+        $row=mysqli_fetch_assoc($run);
+        $emp_name=$row['emp_name'];//save employee name
+        $dbemp_mac=$row['emp_mac'];//save employee name
+        $dbemp_ip=$row['emp_ip'];//save employee name
+        $_SESSION['email']=" Name ".$emp_name." MAC ".$dbemp_mac." IP".$dbemp_ip ; 
+
+        // Check Mack &  IP
+        if ($dbemp_mac==$emp_mac) {
+            $emp_status="Logged OUT !";
+            echo "<script> alert('Success!!".$_SESSION['email'].$emp_status.$remark." You are Logged Out');</script>"; 
+            //Check IP
+            if ($dbemp_ip==$emp_ip) {
+                $remark="Log in & out  MAC OK & IP OK ";  
+            }
+            else{    $remark=" MAC OK But Log out IP NOT OK ";  
+            }
+            //Check IP
+
+            
+        }else{
+            echo "<script> alert('MAC did not match! Unsuccessfull LOG OUT !!".$_SESSION['email'].$emp_status.$remark."You are NOT IN');window.open('index.php');</script>"; 
+
+
+        }
+        // Check Mack &  IP
+
+
+        //Attendance Entry+++++++++++++++++++++++++++++
+        include("db_conection.php");  
+
+        $insertdb="UPDATE attendance SET emp_status='$emp_status',logouttime='$logouttime',logoutmin='$logoutmin',remark='$remark',day='$day',month='$month' WHERE emp_name='$emp_name' AND emp_date='$emp_date'";  
+        if(mysqli_query($dbcon,$insertdb))  
+        {  
+            echo "<script> alert('IP & Mac Logged out!!');</script>";
+            // echo"<script>window.open('index.php');</script>";  
+        }
+        else{ echo "<script> alert('Not registered in Logged out !');</script>";}  
+        //Attendance Entry+++++++++++++++++++++++++++++
+
+        //$_SESSION['emp_email']=$emp_email; 
+        //include 'loginfunction.php'; 
+        // echo "<script> alert('success!!".$_SESSION['email']."you are in');window.open('index.php');</script>"; 
+    }
 
 }  
+// logout Code PHP Starts  
+
 // login Code PHP Starts  
   
 if(isset($_POST['login']))  
