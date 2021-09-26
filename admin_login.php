@@ -53,7 +53,7 @@ if(isset($_POST['admin_login']))
 
         $_SESSION['admin_name']=$row['name'];
         echo "<script>alert('Hello, Mr. ".$_SESSION['name']." You are successfully logged in.');</script>";  
-        echo "<script>window.open('view_users.php','_self')</script>";  
+        echo "<script>window.open('adminpanel.php','_self')</script>";  
     }  
     else {echo"<script>alert('Admin Details are incorrect..!')</script>";}  
   

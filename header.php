@@ -62,7 +62,7 @@ session_start();//session starts here
               <li class="nav-item">
                 <a class="nav-link" href="registration.php">Add Employee</a>
               </li>
-              <li class="nav-item">
+              
                 <?php 
 
                   if(empty($_SESSION['admin_name'])){
@@ -73,12 +73,17 @@ session_start();//session starts here
                    }else if (!empty($_SESSION['admin_name'])){
                     $adm="Admin Name: ".$_SESSION['admin_name']
                     ?>
+                <li class="nav-item">
+                    <a href="adminpanel.php" class="btn btn-outline-info">Admin panel</a>
+                </li>
+                <li class="nav-item">
                     <form method="POST">
                     <input type="submit" name="admin_logout" value="Admin logout" class="btn btn-outline-info ">
                     </form>
+                </li>
                     <?php
                    } ?>
-              </li>
+             
             </ul>
             
             

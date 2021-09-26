@@ -1,14 +1,16 @@
 <?php include 'header.php'; ?> 
-<?php 
-if (empty($_SESSION['admin_name'])) {
-    // Admin loged in check
-    header("Location: admin_login.php");
-}
- ?>
+<?php include'checkadminlogin.php'; ?>
 
 <div class="row">
     <div class="col-md-10 offset-md-1">
-        
+        <table class="table table-bordered">
+          <thead>
+              
+          </thead>
+          <tbody>
+              
+          </tbody>
+        </table>
     </div>
 </div>
 
