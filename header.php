@@ -38,7 +38,7 @@ session_start();//session starts here
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
           <a class="navbar-brand" href="#">
               <h2>
-                  <em> EAMS </em>
+                  <i class="bi bi-person-bounding-box text-info">EAMS</i>
               </h2>
           </a>
           
@@ -64,15 +64,23 @@ session_start();//session starts here
                 <a class="nav-link" href="registration.php">New Employee</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"></a>
+                <?php 
+                  //if ($_SESSION['admin_name']) {
+                  
+                    ?>
+                    <input type="submit" name="admin_logout" value="Admin logout"  class="btn btn-outline-info ">
+                  <?php   
+                  // } ?>
               </li>
             </ul>
             
             
           </div>
-          <span class="navbar-text " style=" ">
+          <span class="navbar-text p-1" style=" ">
                | IP & MAC based attendance system |  
           </span>
+
+          
         </nav>
       </div>
     </div>
@@ -88,8 +96,8 @@ background-position: right;
 ">
     <div class="col-md-6 text-light p-3" style="background-color: rgba(0, 0, 10, 0.3);">
         <h4 class="h3">Welcome to</h4>
-          <h1 class="display-2 m-4 text-primary"><i class="bi bi-person-bounding-box"></i> EAMS </h1>
-          <h3 class="text-info m-1 p-2 ">Employee Attendance Management System</h3>
+          <h1 class="display-2 m-4 text-info"><i class="bi bi-person-bounding-box"></i> EAMS </h1>
+          <h3 class="text-primary m-1 p-2 ">Employee Attendance Management System</h3>
 
         <h5 class="m-3">EAMS is a IP and MAC based Attendance System for official use.</h5>
 
