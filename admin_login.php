@@ -36,9 +36,12 @@ if(isset($_POST['admin_login']))
 {  
     $email=$_POST['email'];  
     $pass=$_POST['pass'];  
+ 
+
   
     $admin_query="select * from admin where email='$email' AND pass='$pass'";  
     $run_query=mysqli_query($dbcon,$admin_query);  
+ 
   
     if(mysqli_num_rows($run_query)>0)  
     {           
