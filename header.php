@@ -21,7 +21,6 @@ session_start();//session starts here
     <!-- Bootstrap CSS -->
 
 
-
     <link rel="icon" type="text/css" href="person-bounding-box.svg" class="bg-warning"> 
     
 
