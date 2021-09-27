@@ -22,6 +22,7 @@ if(isset($_POST['register']))
 
 
 //echo ($emp_name.$emp_mobile.$emp_email.$emp_designation.$emp_ip.$emp_mac.$emp_pass.$emp_logintime.$emp_logouttime);
+  
 
 //insert the user into the database.  
     $insertdb="insert into employee(emp_name,emp_mobile,emp_email,emp_designation,emp_ip,emp_mac,emp_pass,emp_logintime,emp_logouttime)values('$emp_name','$emp_mobile','$emp_email','$emp_designation','$emp_ip','$emp_mac','$emp_pass','$emp_logintime','$emp_logouttime')";  
