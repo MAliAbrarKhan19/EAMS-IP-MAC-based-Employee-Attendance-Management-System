@@ -25,7 +25,7 @@ session_start();//session starts here
   
                                 <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >  
   
-                            <!-- Change this to a button or input when using this as a form -->  
+                             
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
                     </form>  
