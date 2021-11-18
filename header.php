@@ -41,7 +41,7 @@ session_start();//session starts here
                   <i class="bi bi-person-bounding-box text-info">EAMS</i>
               </h2>
           </a>
-          <span class="navbar-text mr-5" style=" ">
+          <span class="navbar-text mr-5">
                | IP & MAC based attendance system |  
           </span>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
